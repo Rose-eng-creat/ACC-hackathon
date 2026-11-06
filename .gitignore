@@ -1,0 +1,7 @@
+# 依赖和本地数据留在磁盘上，不提交
+backend/node_modules/
+backend/ai_study.db
+backend/.env
+
+# 本地模型密钥。复制 extension/ai-config.example.js 为 ai-config.js 后填写
+extension/ai-config.js
