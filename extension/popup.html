@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI 学习伴侣</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 AI 学习伴侣</h1>
+
+    <div class="qa-section">
+      <textarea
+        id="question-input"
+        placeholder="输入你的问题"
+        rows="3"
+      ></textarea>
+      <button id="ask-button">提问</button>
+    </div>
+
+    <div id="status" class="status"></div>
+
+    <div class="answer-section">
+      <h2>AI 回答</h2>
+      <div id="answer-box" class="answer-box">暂无回答，请先提问～</div>
+    </div>
+
+    <div class="footer">
+      <a id="dashboard-link" href="#">📊 打开学习看板</a>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

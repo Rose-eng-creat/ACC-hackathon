@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>学习看板 - AI 学习伴侣</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: #f5f6fa;
+      color: #2c3e50;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 22px;
+    }
+    #refresh-btn {
+      padding: 6px 16px;
+      background: #4c6ef5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    #refresh-btn:hover {
+      background: #3b5bdb;
+    }
+    section {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+    .card {
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f2f6;
+    }
+    .card:last-child {
+      border-bottom: none;
+    }
+    .card .meta {
+      font-size: 12px;
+      color: #868e96;
+      margin-bottom: 4px;
+    }
+    .card .q {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .card .a {
+      color: #495057;
+      white-space: pre-wrap;
+    }
+    .card ul {
+      margin: 4px 0;
+      padding-left: 18px;
+    }
+    .empty {
+      color: #adb5bd;
+      font-size: 13px;
+      padding: 12px 0;
+    }
+
+    /* ===== 推荐视频相关样式 ===== */
+    .reco-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #reco-refresh {
+      padding: 4px 12px;
+      background: #4c6ef5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    #reco-refresh:hover {
+      background: #3b5bdb;
+    }
+    .reco-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 10px 0 12px;
+    }
+    .reco-tab {
+      padding: 4px 12px;
+      border: 1px solid #dcdde1;
+      background: #fff;
+      border-radius: 14px;
+      font-size: 12px;
+      cursor: pointer;
+      color: #495057;
+    }
+    .reco-tab.active {
+      background: #4c6ef5;
+      color: #fff;
+      border-color: #4c6ef5;
+    }
+    .reco-card .meta {
+      font-size: 12px;
+      color: #adb5bd;
+      margin-top: 2px;
+    }
+    .reco-card a {
+      color: #4c6ef5;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .reco-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>
+      📊 学习看板
+      <button id="refresh-btn">🔄 刷新</button>
+    </h1>
+
+    <section>
+      <h2 class="reco-header">
+        推荐学习视频
+        <button id="reco-refresh">🔄 刷新</button>
+      </h2>
+      <div class="reco-tabs">
+        <button class="reco-tab active" data-type="supplement">补充型</button>
+        <button class="reco-tab" data-type="advanced">进阶型</button>
+      </div>
+      <div id="reco-list"></div>
+    </section>
+
+    <section>
+      <h2>最近的视频分析</h2>
+      <div id="analysis-list"></div>
+    </section>
+
+    <section>
+      <h2>最近的问答记录</h2>
+      <div id="qa-list"></div>
+    </section>
+  </div>
+
+  <script src="db.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
